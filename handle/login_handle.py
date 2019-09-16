@@ -3,8 +3,9 @@ import time
 from page.login_page import LoginPage
 from selenium import webdriver
 class LoginHandle:
-	def __init__(self):
-		self.login_page = LoginPage()
+	def __init__(self,driver):
+		self.driver = driver
+		self.login_page = LoginPage(self.driver)
 	#操作登录页面的元素
 	def send_username(self,user):
 		'''

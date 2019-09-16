@@ -8,11 +8,10 @@ from selenium import webdriver
 
 class LoginPage:
 	# 获取登录页面所有的页面元素信息
-	def __init__(self):
-		# base_driver = self.driver.webdriver.Chrome()
-		self.driver = webdriver.Chrome()
+	def __init__(self,driver):
+		self.driver = driver
 		print("This is test!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-		self.get_by_local = GetByLocal()
+		self.get_by_local = GetByLocal(self.driver)
 
 	def get_username_element(self):
 		'''

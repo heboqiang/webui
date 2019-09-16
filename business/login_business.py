@@ -3,8 +3,9 @@ from handle.login_handle import LoginHandle
 import time
 
 class LoginBusiness:
-	def __init__(self):
-		self.login_handle = LoginHandle()
+	def __init__(self,driver):
+		self.driver = driver
+		self.login_handle = LoginHandle(self.driver)
 
 	def login_pass(self):
 		self.login_handle.send_username('18821768014')
